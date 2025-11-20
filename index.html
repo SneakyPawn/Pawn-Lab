@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pawn Lab – Training Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>
+      Pawn Lab
+      <span class="badge">Training Game</span>
+    </h1>
+
+    <div class="top-bar">
+      <div class="status-block">
+        <div id="status">Loading…</div>
+        <div id="result"></div>
+      </div>
+      <div class="controls">
+        <span class="mode-label">Mode: You (White) vs Computer (Black)</span>
+        <button id="restartBtn">↻ New Game</button>
+      </div>
+    </div>
+
+    <div class="board-container">
+      <div id="board-wrapper">
+        <div id="board"></div>
+      </div>
+
+      <div class="sidebar">
+        <div class="opt-group">
+          <h2>
+            Options
+            <span>Rules & Powers</span>
+          </h2>
+
+          <div class="opt-row">
+            <label>
+              <input type="checkbox" id="showCoords" checked />
+              Show coordinates
+            </label>
+          </div>
+
+          <div class="rules-text">
+            <strong>Rules:</strong>
+            <ul>
+              <li>Pawns move and capture like normal chess.</li>
+              <li>
+                Win by promoting, capturing all enemy pawns,
+                or leaving your opponent with no legal move.
+              </li>
+              <li>No kings – just pawn warfare.</li>
+            </ul>
+          </div>
+
+          <div class="opt-row">
+            <label>
+              <input type="checkbox" id="superPawnToggle" />
+              Super Pawn (White, 1×)
+            </label>
+          </div>
+          <p class="power-help">
+            Super Pawn: one pawn may move like a king for a single move. One use per game.
+          </p>
+
+          <div class="opt-row">
+            <label>
+              <input type="checkbox" id="knightPawnToggle" />
+              Knight Pawn (White, 1×)
+            </label>
+          </div>
+          <p class="power-help">
+            Knight Pawn: one pawn may jump like a knight for a single move. One use per game.
+          </p>
+        </div>
+
+        <!-- Puzzles -->
+        <div class="opt-group">
+          <h2>Puzzles</h2>
+          <div class="opt-row">
+            <select id="puzzleSelect">
+              <option value="random">Random puzzle</option>
+              <option value="passed">Create a passed pawn</option>
+              <option value="race">Pawn race</option>
+              <option value="enpassant">En passant</option>
+              <option value="capture">Capture battle</option>
+              <option value="3v3break">3-on-3 Pawn Break</option>
+
+            </select>
+          </div>
+          <button id="loadPuzzleBtn">Load puzzle</button>
+        </div>
+
+        <div class="opt-group">
+          <h2>Moves</h2>
+          <ul id="moveList"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="engine.js"></script>
+</body>
+</html>
