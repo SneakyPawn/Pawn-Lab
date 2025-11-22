@@ -186,18 +186,21 @@ button:active {
 
 /* Mobile-only tweak: iOS renders white pawns smaller than black pawns */
 @media (max-width: 768px) {
-  /* Smaller base size so pawns don't look gigantic */
+  body {
+    border: 4px solid red;  /* TEMP: just for testing */
+  }
+
   .piece {
     font-size: 30px;
     line-height: 1;
   }
 
-  /* Gentle boost for white pawns so they match black visually */
   .white-piece {
-    transform: scale(1.14);   /* was 1.18 — less extreme now */
+    transform: scale(1.14);
     transform-origin: center;
   }
 }
+
 
 
 /* Coordinates */
