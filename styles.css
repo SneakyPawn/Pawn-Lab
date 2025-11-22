@@ -166,10 +166,10 @@ button:active {
   background: var(--dark-square);
 }
 
-/* Piece spans */
+/* ===== PIECE SIZES ===== */
 
 .piece {
-  font-size: 40px;      /* bigger by default on desktop */
+  font-size: 40px;      /* nice size on desktop */
   line-height: 1;
   pointer-events: none;
 }
@@ -177,6 +177,7 @@ button:active {
 .white-piece {
   color: #f9fafb;
   text-shadow: 0 0 2px #000, 0 0 4px #000, 0 0 6px #000;
+  /* IMPORTANT: no transform here on desktop */
 }
 
 .black-piece {
@@ -186,20 +187,17 @@ button:active {
 
 /* Mobile-only tweak: iOS renders white pawns smaller than black pawns */
 @media (max-width: 768px) {
-  /* Smaller base size so pawns don't look gigantic on phones */
   .piece {
-    font-size: 30px;
+    font-size: 32px;     /* a bit smaller so it fits well on phones */
     line-height: 1;
   }
 
-  /* Gentle boost for white pawns so they visually match black pawns */
+  /* Only boost white pawn size on small screens */
   .white-piece {
-    transform: scale(1.14);
+    transform: scale(1.20);   /* adjust to taste: 1.18–1.22 */
     transform-origin: center;
   }
 }
-
-
 
 
 /* Coordinates */
