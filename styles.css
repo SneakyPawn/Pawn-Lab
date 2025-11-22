@@ -169,7 +169,8 @@ button:active {
 /* Piece spans */
 
 .piece {
-  font-size: 34px;
+  font-size: 40px;      /* bigger by default on desktop */
+  line-height: 1;
   pointer-events: none;
 }
 
@@ -182,16 +183,17 @@ button:active {
   color: #111827;
   text-shadow: 0 0 2px #000;
 }
-/* Mobile fix: white Unicode pieces render a bit smaller on some phones.
-   Slightly scale them up on small screens so they match black pieces. */
+
+/* Mobile-only tweak: iOS renders white pawns smaller than black pawns */
 @media (max-width: 768px) {
+  /* Slightly smaller overall on phones to keep the board readable */
   .piece {
-    font-size: 36px;           /* slightly bigger overall on phones */
-    line-height: 1;
+    font-size: 34px;
   }
 
+  /* Compensate for tiny white glyph on iOS */
   .white-piece {
-    transform: scale(1.08);    /* gently enlarge white pieces */
+    transform: scale(1.18);   /* bump white pawns ~18% */
     transform-origin: center;
   }
 }
