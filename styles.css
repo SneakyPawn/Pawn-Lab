@@ -186,14 +186,15 @@ button:active {
 
 /* Mobile-only tweak: iOS renders white pawns smaller than black pawns */
 @media (max-width: 768px) {
-  /* Slightly smaller overall on phones to keep the board readable */
+  /* Smaller base size so pawns don't look gigantic */
   .piece {
-    font-size: 34px;
+    font-size: 30px;
+    line-height: 1;
   }
 
-  /* Compensate for tiny white glyph on iOS */
+  /* Gentle boost for white pawns so they match black visually */
   .white-piece {
-    transform: scale(1.18);   /* bump white pawns ~18% */
+    transform: scale(1.14);   /* was 1.18 — less extreme now */
     transform-origin: center;
   }
 }
